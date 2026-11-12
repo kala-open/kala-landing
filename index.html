@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kala adalah pendamping desktop open source untuk menjaga fokus, menikmati musik, dan menjalani setiap kala dengan lebih tenang."
+    />
+    <meta name="theme-color" content="#09090b" />
+    <title>Kala — Pendamping Setiap Kala</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root { color-scheme: dark; }
+      body { font-family: "Plus Jakarta Sans", sans-serif; }
+      .glass { background: rgba(24, 24, 32, .72); backdrop-filter: blur(18px); }
+      .hero-glow { background: radial-gradient(circle, rgba(139, 92, 246, .2), transparent 68%); }
+      .grid-bg { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 4rem 4rem; }
+      .focus-ring:focus-visible { outline: 3px solid #c4b5fd; outline-offset: 4px; }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-[#09090b] text-zinc-100 selection:bg-violet-500 selection:text-white">
+    <header class="glass fixed inset-x-0 top-0 z-50 border-b border-white/10">
+      <div class="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <a href="#" class="focus-ring flex items-center gap-3 rounded-xl" aria-label="Kala, kembali ke beranda">
+          <span class="grid size-10 place-items-center rounded-xl border border-violet-300/20 bg-violet-400/10 text-xl shadow-lg shadow-violet-950/30">✦</span>
+          <span class="text-xl font-extrabold tracking-tight">kala</span>
+        </a>
+        <nav id="site-nav" class="hidden items-center gap-8 text-sm font-medium text-zinc-400 md:flex" aria-label="Navigasi utama">
+          <a class="focus-ring rounded-md transition hover:text-white" href="#fitur">Fitur</a>
+          <a class="focus-ring rounded-md transition hover:text-white" href="#download">Download</a>
+          <a class="focus-ring rounded-md transition hover:text-white" href="#open-source">Open source</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/kala-open/kala/releases/latest" target="_blank" rel="noopener noreferrer" class="focus-ring hidden rounded-full bg-white px-4 py-2 text-sm font-bold text-zinc-950 transition hover:bg-violet-100 sm:inline-flex">Unduh Kala</a>
+          <button id="menu-button" class="focus-ring inline-flex rounded-lg border border-white/10 p-2 text-zinc-300 md:hidden" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Buka menu navigasi">☰</button>
+        </div>
+      </div>
+      <nav id="mobile-nav" class="hidden border-t border-white/10 px-5 py-4 md:hidden" aria-label="Navigasi mobile">
+        <div class="mx-auto flex max-w-6xl flex-col gap-1 text-sm text-zinc-300">
+          <a class="focus-ring rounded-lg px-3 py-3 hover:bg-white/5" href="#fitur">Fitur</a>
+          <a class="focus-ring rounded-lg px-3 py-3 hover:bg-white/5" href="#download">Download</a>
+          <a class="focus-ring rounded-lg px-3 py-3 hover:bg-white/5" href="#open-source">Open source</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="grid-bg relative isolate px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
+        <div class="hero-glow pointer-events-none absolute left-1/2 top-20 -z-10 size-[34rem] -translate-x-1/2 rounded-full blur-3xl"></div>
+        <div class="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_.95fr]">
+          <div class="text-center lg:text-left">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1.5 text-xs font-semibold text-violet-200">
+              <span class="size-2 animate-pulse rounded-full bg-emerald-400"></span>
+              Open source desktop companion
+            </div>
+            <h1 class="text-5xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl">
+              Jalani setiap <span class="bg-gradient-to-r from-violet-300 to-fuchsia-300 bg-clip-text text-transparent">kala</span> dengan lebih berarti.
+            </h1>
+            <p class="mx-auto mt-6 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg lg:mx-0">
+              Ruang kecil di desktop untuk membantu Anda fokus, beristirahat, dan menikmati musik—tanpa membuat hari terasa rumit.
+            </p>
+            <div id="download" class="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
+              <a id="download-button" href="https://github.com/kala-open/kala/releases/latest" target="_blank" rel="noopener noreferrer" class="focus-ring inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-4 font-bold shadow-xl shadow-violet-950/40 transition hover:-translate-y-0.5 hover:from-violet-500 hover:to-indigo-500 sm:w-auto">
+                <span aria-hidden="true">↓</span>
+                <span id="download-label">Download Kala</span>
+              </a>
+              <a href="https://github.com/kala-open/kala" target="_blank" rel="noopener noreferrer" class="focus-ring inline-flex w-full items-center justify-center rounded-2xl border border-white/10 px-6 py-4 font-semibold text-zinc-200 transition hover:border-white/25 hover:bg-white/5 sm:w-auto">Lihat di GitHub</a>
+            </div>
+            <p id="platform-note" class="mt-4 text-xs text-zinc-500">Tersedia untuk macOS, Windows, dan Linux.</p>
+          </div>
+
+          <div class="glass rounded-3xl border border-white/10 p-4 shadow-2xl shadow-violet-950/20 sm:p-6" aria-label="Pratinjau aplikasi Kala">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex gap-2" aria-hidden="true"><span class="size-3 rounded-full bg-rose-400/80"></span><span class="size-3 rounded-full bg-amber-300/80"></span><span class="size-3 rounded-full bg-emerald-400/80"></span></div>
+              <span class="font-mono text-xs text-zinc-500">kala / today</span>
+            </div>
+            <div class="grid gap-3 pt-5 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-black/20 p-5"><p class="text-xs text-zinc-500">Focus session</p><p class="mt-2 text-3xl font-bold tracking-wider">25:00</p><div class="mt-4 h-1.5 rounded-full bg-white/10"><div class="h-full w-2/3 rounded-full bg-violet-400"></div></div></div>
+              <div class="rounded-2xl border border-white/10 bg-black/20 p-5"><p class="text-xs text-zinc-500">Now playing</p><p class="mt-2 truncate font-semibold">Lo-fi study beats</p><p class="mt-5 text-xs text-violet-300">♪ Playing softly</p></div>
+            </div>
+            <div class="mt-3 flex items-center justify-between rounded-2xl border border-violet-300/10 bg-violet-400/10 p-4"><div class="flex items-center gap-3"><span class="grid size-9 place-items-center rounded-full bg-violet-300/15">✦</span><div><p class="text-sm font-semibold">Kala siap menemani</p><p class="text-xs text-zinc-400">Satu langkah kecil hari ini.</p></div></div><span class="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[10px] font-semibold text-emerald-300">ACTIVE</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fitur" class="border-t border-white/5 px-5 py-20 sm:px-8 lg:py-28">
+        <div class="mx-auto max-w-6xl">
+          <div class="max-w-2xl"><p class="text-sm font-bold uppercase tracking-[.2em] text-violet-300">Dibuat untuk ritme Anda</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Lebih fokus, tanpa kehilangan jeda.</h2><p class="mt-4 leading-7 text-zinc-400">Kala menggabungkan alat-alat kecil yang membantu rutinitas harian tetap terasa ringan.</p></div>
+          <div class="mt-10 grid gap-4 md:grid-cols-3">
+            <article class="rounded-3xl border border-white/10 bg-white/[.03] p-6"><span class="grid size-11 place-items-center rounded-2xl bg-violet-400/10 text-xl">◷</span><h3 class="mt-5 text-lg font-bold">Fokus yang terarah</h3><p class="mt-2 text-sm leading-6 text-zinc-400">Pomodoro sederhana untuk membantu Anda mulai, bekerja, dan beristirahat pada waktu yang tepat.</p></article>
+            <article class="rounded-3xl border border-white/10 bg-white/[.03] p-6"><span class="grid size-11 place-items-center rounded-2xl bg-fuchsia-400/10 text-xl">♫</span><h3 class="mt-5 text-lg font-bold">Suasana yang pas</h3><p class="mt-2 text-sm leading-6 text-zinc-400">Putar musik pilihan Anda dan bangun suasana kerja yang membuat konsentrasi terasa natural.</p></article>
+            <article class="rounded-3xl border border-white/10 bg-white/[.03] p-6"><span class="grid size-11 place-items-center rounded-2xl bg-indigo-400/10 text-xl">✦</span><h3 class="mt-5 text-lg font-bold">Selalu dekat</h3><p class="mt-2 text-sm leading-6 text-zinc-400">Widget praktis yang hadir saat dibutuhkan, lalu menyingkir saat Anda ingin fokus sepenuhnya.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="open-source" class="px-5 pb-20 sm:px-8 lg:pb-28">
+        <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 rounded-3xl border border-violet-300/15 bg-gradient-to-br from-violet-400/10 to-transparent p-7 sm:p-10 md:flex-row md:items-center">
+          <div><h2 class="text-2xl font-extrabold">Dibangun secara terbuka.</h2><p class="mt-2 max-w-xl text-sm leading-6 text-zinc-400">Kala adalah proyek open source. Lihat perkembangannya, beri masukan, atau ikut membuat pengalaman desktop yang lebih manusiawi.</p></div>
+          <a href="https://github.com/kala-open/kala" target="_blank" rel="noopener noreferrer" class="focus-ring shrink-0 rounded-full border border-white/15 px-5 py-3 text-sm font-bold transition hover:bg-white/10">Jelajahi repository ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 px-5 py-8 sm:px-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Kala Open Source Initiative.</p>
+        <p>Dibuat dengan tenang, untuk setiap kala.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById("menu-button");
+      const mobileNav = document.getElementById("mobile-nav");
+      menuButton.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Buka menu navigasi" : "Tutup menu navigasi");
+        mobileNav.classList.toggle("hidden", isOpen);
+      });
+      mobileNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Buka menu navigasi");
+        mobileNav.classList.add("hidden");
+      }));
+
+      const userAgent = navigator.userAgent.toLowerCase();
+      const downloadLabel = document.getElementById("download-label");
+      const platformNote = document.getElementById("platform-note");
+      if (userAgent.includes("mac")) {
+        downloadLabel.textContent = "Download untuk macOS";
+        platformNote.textContent = "Versi macOS tersedia di halaman GitHub Releases.";
+      } else if (userAgent.includes("win")) {
+        downloadLabel.textContent = "Download untuk Windows";
+        platformNote.textContent = "Versi Windows tersedia di halaman GitHub Releases.";
+      } else if (userAgent.includes("linux")) {
+        downloadLabel.textContent = "Download untuk Linux";
+        platformNote.textContent = "Versi Linux tersedia di halaman GitHub Releases.";
+      }
+    </script>
+  </body>
+</html>
